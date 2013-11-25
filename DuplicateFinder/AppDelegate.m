@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#include "FileInfo.h"
 
 @implementation AppDelegate
 
@@ -15,4 +16,17 @@
     // Insert code here to initialize your application
 }
 
+- (IBAction)openDirectory:(id)sender {
+    
+    NSOpenPanel* openPanelDialog = [NSOpenPanel openPanel];
+    openPanelDialog.canChooseFiles = NO;
+    openPanelDialog.canChooseDirectories = YES;
+    openPanelDialog.prompt = @"Select...";
+
+    if([openPanelDialog runModal] == NSOKButton) {
+        NSAlert* alert = [[NSAlert alloc] init];
+        alert.messageText = [NSString stringWithFormat:@"You selected %@", [openPanelDialog.URL absoluteString]];
+        [alert runModal];
+    }
+}
 @end

@@ -11,5 +11,9 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+- (IBAction)openDirectory:(id)sender;
+
+@property (weak) IBOutlet NSToolbarItem *toolbarOpenDirectory;
+@property (weak) IBOutlet NSMenuItem *menuOpenDirectory;
 
 @end

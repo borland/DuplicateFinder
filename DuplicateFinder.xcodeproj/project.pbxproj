@@ -18,6 +18,7 @@
 		D3BD221E1842CD960074681B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD21FD1842CD960074681B /* Cocoa.framework */; };
 		D3BD22261842CD960074681B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3BD22241842CD960074681B /* InfoPlist.strings */; };
 		D3BD22281842CD960074681B /* DuplicateFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BD22271842CD960074681B /* DuplicateFinderTests.m */; };
+		D3BD22331842CEBC0074681B /* FileInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3BD22311842CEBC0074681B /* FileInfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		D3BD22231842CD960074681B /* DuplicateFinderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DuplicateFinderTests-Info.plist"; sourceTree = "<group>"; };
 		D3BD22251842CD960074681B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3BD22271842CD960074681B /* DuplicateFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuplicateFinderTests.m; sourceTree = "<group>"; };
+		D3BD22311842CEBC0074681B /* FileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileInfo.cpp; sourceTree = "<group>"; };
+		D3BD22321842CEBC0074681B /* FileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				D3BD220F1842CD960074681B /* AppDelegate.h */,
 				D3BD22101842CD960074681B /* AppDelegate.m */,
 				D3BD22121842CD960074681B /* MainMenu.xib */,
+				D3BD22311842CEBC0074681B /* FileInfo.cpp */,
+				D3BD22321842CEBC0074681B /* FileInfo.h */,
 				D3BD22151842CD960074681B /* Images.xcassets */,
 				D3BD22041842CD960074681B /* Supporting Files */,
 			);
@@ -253,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BD22111842CD960074681B /* AppDelegate.m in Sources */,
+				D3BD22331842CEBC0074681B /* FileInfo.cpp in Sources */,
 				D3BD220A1842CD960074681B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
