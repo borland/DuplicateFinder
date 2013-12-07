@@ -8,7 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class DFTableViewDataSource;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+
+@property (strong) DFTableViewDataSource* dataSource;
 
 @property (assign) IBOutlet NSWindow *window;
 - (IBAction)openDirectory:(id)sender;

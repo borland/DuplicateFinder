@@ -7,13 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#include "FileInfo.h"
+#import "DFTableViewDataSource.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    self.dataSource = [[DFTableViewDataSource alloc] init];
 }
 
 - (IBAction)openDirectory:(id)sender {

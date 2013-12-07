@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D35E0D371852D77500847B9F /* DFFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E0D361852D77500847B9F /* DFFile.m */; };
+		D35E0D3A1852D87A00847B9F /* DFTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E0D391852D87A00847B9F /* DFTableViewDataSource.m */; };
 		D3BD21FE1842CD960074681B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD21FD1842CD960074681B /* Cocoa.framework */; };
 		D3BD22081842CD960074681B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3BD22061842CD960074681B /* InfoPlist.strings */; };
 		D3BD220A1842CD960074681B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BD22091842CD960074681B /* main.m */; };
@@ -18,7 +20,6 @@
 		D3BD221E1842CD960074681B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD21FD1842CD960074681B /* Cocoa.framework */; };
 		D3BD22261842CD960074681B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3BD22241842CD960074681B /* InfoPlist.strings */; };
 		D3BD22281842CD960074681B /* DuplicateFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BD22271842CD960074681B /* DuplicateFinderTests.m */; };
-		D3BD22331842CEBC0074681B /* FileInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3BD22311842CEBC0074681B /* FileInfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D35E0D351852D77500847B9F /* DFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFFile.h; sourceTree = "<group>"; };
+		D35E0D361852D77500847B9F /* DFFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFFile.m; sourceTree = "<group>"; };
+		D35E0D381852D87A00847B9F /* DFTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFTableViewDataSource.h; sourceTree = "<group>"; };
+		D35E0D391852D87A00847B9F /* DFTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFTableViewDataSource.m; sourceTree = "<group>"; };
 		D3BD21FA1842CD960074681B /* DuplicateFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuplicateFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BD21FD1842CD960074681B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D3BD22001842CD960074681B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -51,8 +56,6 @@
 		D3BD22231842CD960074681B /* DuplicateFinderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DuplicateFinderTests-Info.plist"; sourceTree = "<group>"; };
 		D3BD22251842CD960074681B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3BD22271842CD960074681B /* DuplicateFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuplicateFinderTests.m; sourceTree = "<group>"; };
-		D3BD22311842CEBC0074681B /* FileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileInfo.cpp; sourceTree = "<group>"; };
-		D3BD22321842CEBC0074681B /* FileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +124,12 @@
 				D3BD220F1842CD960074681B /* AppDelegate.h */,
 				D3BD22101842CD960074681B /* AppDelegate.m */,
 				D3BD22121842CD960074681B /* MainMenu.xib */,
-				D3BD22311842CEBC0074681B /* FileInfo.cpp */,
-				D3BD22321842CEBC0074681B /* FileInfo.h */,
 				D3BD22151842CD960074681B /* Images.xcassets */,
 				D3BD22041842CD960074681B /* Supporting Files */,
+				D35E0D351852D77500847B9F /* DFFile.h */,
+				D35E0D361852D77500847B9F /* DFFile.m */,
+				D35E0D381852D87A00847B9F /* DFTableViewDataSource.h */,
+				D35E0D391852D87A00847B9F /* DFTableViewDataSource.m */,
 			);
 			path = DuplicateFinder;
 			sourceTree = "<group>";
@@ -257,9 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35E0D371852D77500847B9F /* DFFile.m in Sources */,
 				D3BD22111842CD960074681B /* AppDelegate.m in Sources */,
-				D3BD22331842CEBC0074681B /* FileInfo.cpp in Sources */,
 				D3BD220A1842CD960074681B /* main.m in Sources */,
+				D35E0D3A1852D87A00847B9F /* DFTableViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +476,7 @@
 				D3BD222D1842CD960074681B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3BD222E1842CD960074681B /* Build configuration list for PBXNativeTarget "DuplicateFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +485,7 @@
 				D3BD22301842CD960074681B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
