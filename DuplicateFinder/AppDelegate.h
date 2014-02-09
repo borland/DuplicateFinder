@@ -8,16 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class DFTableViewDataSource;
+@class DFTableViewController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong) DFTableViewDataSource* dataSource;
+@property (strong) DFTableViewController* tableViewController;
 
 @property (assign) IBOutlet NSWindow *window;
 - (IBAction)openDirectory:(id)sender;
 
 @property (weak) IBOutlet NSToolbarItem *toolbarOpenDirectory;
 @property (weak) IBOutlet NSMenuItem *menuOpenDirectory;
+@property (weak) IBOutlet NSTableView *mainTableView;
 
 @end

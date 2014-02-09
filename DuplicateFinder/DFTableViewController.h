@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DFTableViewDataSource : NSObject<NSTableViewDelegate>
+@interface DFTableViewController: NSViewController<NSTableViewDelegate, NSTableViewDataSource>
 @property (nonatomic, strong) NSMutableArray* foundFiles;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;

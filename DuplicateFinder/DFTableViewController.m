@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Orion Edwards. All rights reserved.
 //
 
-#import "DFTableViewDataSource.h"
+#import "DFTableViewController.h"
 #import "DFFile.h"
 
-@implementation DFTableViewDataSource
+@implementation DFTableViewController
 
 - (id)init {
     self = [super init];

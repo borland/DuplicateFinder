@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D35E0D371852D77500847B9F /* DFFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E0D361852D77500847B9F /* DFFile.m */; };
-		D35E0D3A1852D87A00847B9F /* DFTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E0D391852D87A00847B9F /* DFTableViewDataSource.m */; };
+		D35E0D3A1852D87A00847B9F /* DFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35E0D391852D87A00847B9F /* DFTableViewController.m */; };
 		D3BD21FE1842CD960074681B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD21FD1842CD960074681B /* Cocoa.framework */; };
 		D3BD22081842CD960074681B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3BD22061842CD960074681B /* InfoPlist.strings */; };
 		D3BD220A1842CD960074681B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BD22091842CD960074681B /* main.m */; };
@@ -35,8 +35,8 @@
 /* Begin PBXFileReference section */
 		D35E0D351852D77500847B9F /* DFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFFile.h; sourceTree = "<group>"; };
 		D35E0D361852D77500847B9F /* DFFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFFile.m; sourceTree = "<group>"; };
-		D35E0D381852D87A00847B9F /* DFTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFTableViewDataSource.h; sourceTree = "<group>"; };
-		D35E0D391852D87A00847B9F /* DFTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFTableViewDataSource.m; sourceTree = "<group>"; };
+		D35E0D381852D87A00847B9F /* DFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFTableViewController.h; sourceTree = "<group>"; };
+		D35E0D391852D87A00847B9F /* DFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFTableViewController.m; sourceTree = "<group>"; };
 		D3BD21FA1842CD960074681B /* DuplicateFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuplicateFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BD21FD1842CD960074681B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D3BD22001842CD960074681B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -128,8 +128,8 @@
 				D3BD22041842CD960074681B /* Supporting Files */,
 				D35E0D351852D77500847B9F /* DFFile.h */,
 				D35E0D361852D77500847B9F /* DFFile.m */,
-				D35E0D381852D87A00847B9F /* DFTableViewDataSource.h */,
-				D35E0D391852D87A00847B9F /* DFTableViewDataSource.m */,
+				D35E0D381852D87A00847B9F /* DFTableViewController.h */,
+				D35E0D391852D87A00847B9F /* DFTableViewController.m */,
 			);
 			path = DuplicateFinder;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 				D35E0D371852D77500847B9F /* DFFile.m in Sources */,
 				D3BD22111842CD960074681B /* AppDelegate.m in Sources */,
 				D3BD220A1842CD960074681B /* main.m in Sources */,
-				D35E0D3A1852D87A00847B9F /* DFTableViewDataSource.m in Sources */,
+				D35E0D3A1852D87A00847B9F /* DFTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
