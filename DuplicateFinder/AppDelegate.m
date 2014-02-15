@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DFTableViewController.h"
+#import "DFWindowController.h"
 #import "DFFile.h"
 
 @implementation AppDelegate
@@ -18,22 +18,8 @@
     DFFile* f1 = [DFFile fileWithLeft:@"/Users/Foo/Bar.jpg" right:@"/Users/Bar/Bar.jpg" size:1024 hash:300];
     DFFile* f2 = [DFFile fileWithLeft:@"/Users/Foo/X.jpg" right:@"/Users/Bar/X-2.jpg" size:2034951 hash:92];
     
-    [self.tableViewController addFile:f1];
-    [self.tableViewController addFile:f2];
-}
-
-- (IBAction)openDirectory:(id)sender {
-    
-    NSOpenPanel* openPanelDialog = [NSOpenPanel openPanel];
-    openPanelDialog.canChooseFiles = NO;
-    openPanelDialog.canChooseDirectories = YES;
-    openPanelDialog.prompt = @"Select...";
-
-    if([openPanelDialog runModal] == NSOKButton) {
-        NSAlert* alert = [[NSAlert alloc] init];
-        alert.messageText = [NSString stringWithFormat:@"You selected %@", [openPanelDialog.URL absoluteString]];
-        [alert runModal];
-    }
+    [self.windowController addFile:f1];
+    [self.windowController addFile:f2];
 }
 
 @end

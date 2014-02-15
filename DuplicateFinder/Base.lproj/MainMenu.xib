@@ -67,16 +67,22 @@
                         <items>
                             <menuItem title="Open Directory…" keyEquivalent="o" id="72">
                                 <connections>
-                                    <action selector="openDirectory:" target="494" id="PhO-JZ-VMa"/>
+                                    <action selector="openDirectory:" target="a4M-5g-R8R" id="aQE-DH-isU"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Directory Pair..." keyEquivalent="O" id="Aw4-Xc-g9x"/>
                             <menuItem isSeparatorItem="YES" id="Pwd-OF-NfK"/>
                             <menuItem title="Delete Left File" keyEquivalent="l" id="XA9-kg-3qx">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="deleteLeft:" target="a4M-5g-R8R" id="EVx-2e-8ww"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Delete Right File" keyEquivalent="r" id="TKI-Fm-3VV">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="deleteRight:" target="a4M-5g-R8R" id="Opi-Xq-U0b"/>
+                                </connections>
                             </menuItem>
                         </items>
                     </menu>
@@ -183,8 +189,8 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
-                                        <outlet property="dataSource" destination="eJ2-oq-dgr" id="xlW-F1-oM4"/>
-                                        <outlet property="delegate" destination="eJ2-oq-dgr" id="Mro-Ho-iWr"/>
+                                        <outlet property="dataSource" destination="a4M-5g-R8R" id="Lqa-H2-PSD"/>
+                                        <outlet property="delegate" destination="a4M-5g-R8R" id="BN7-ca-ucs"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -230,11 +236,19 @@
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="782D2138-6708-4CA0-BAB6-E183D5BDEB52" explicitItemIdentifier="FileOpenDirectory" label="Open Directory" paletteLabel="Open Directory" tag="-1" image="NSFolder" id="Qup-RH-Ki0">
                         <connections>
-                            <action selector="openDirectory:" target="494" id="biM-Cg-1aZ"/>
+                            <action selector="openDirectory:" target="a4M-5g-R8R" id="REQ-cC-FDj"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="EE5C92B9-0AC8-4F71-91D6-44E5569A36A3" label="Delete Left" paletteLabel="Delete Left" tag="-1" image="NSGoLeftTemplate" id="Hip-F1-YEE"/>
-                    <toolbarItem implicitItemIdentifier="FB7F05F4-A907-4000-8FE8-47FEC7A8E537" label="Delete Right" paletteLabel="Delete Right" tag="-1" image="NSGoRightTemplate" id="MHk-BH-7Ue"/>
+                    <toolbarItem implicitItemIdentifier="EE5C92B9-0AC8-4F71-91D6-44E5569A36A3" label="Delete Left" paletteLabel="Delete Left" tag="-1" image="NSGoLeftTemplate" id="Hip-F1-YEE">
+                        <connections>
+                            <action selector="deleteLeft:" target="a4M-5g-R8R" id="XzA-1w-nw7"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="FB7F05F4-A907-4000-8FE8-47FEC7A8E537" label="Delete Right" paletteLabel="Delete Right" tag="-1" image="NSGoRightTemplate" id="MHk-BH-7Ue">
+                        <connections>
+                            <action selector="deleteRight:" target="a4M-5g-R8R" id="kQB-cs-eJY"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="C2P-vL-Z3X"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="RxL-tk-WfP"/>
                 </allowedToolbarItems>
@@ -245,19 +259,24 @@
                     <toolbarItem reference="RxL-tk-WfP"/>
                 </defaultToolbarItems>
             </toolbar>
+            <connections>
+                <outlet property="delegate" destination="a4M-5g-R8R" id="NFo-Dy-Jpb"/>
+            </connections>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
                 <outlet property="menuOpenDirectory" destination="72" id="qzB-GN-dWc"/>
                 <outlet property="statusBarTextField" destination="Ia9-a7-d5Z" id="No9-c4-eb4"/>
                 <outlet property="toolbarOpenDirectory" destination="Qup-RH-Ki0" id="Euq-QS-mxu"/>
-                <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <customObject id="eJ2-oq-dgr" customClass="DFTableViewController">
+        <customObject id="a4M-5g-R8R" customClass="DFWindowController">
             <connections>
-                <outlet property="tableView" destination="PaC-uN-2Wg" id="rSA-Ko-0eY"/>
+                <outlet property="deleteLeftToolbarItem" destination="Hip-F1-YEE" id="j9S-FM-caF"/>
+                <outlet property="deleteRightToolbarItem" destination="MHk-BH-7Ue" id="KiM-mD-RY4"/>
+                <outlet property="tableView" destination="PaC-uN-2Wg" id="ywT-Rj-rky"/>
+                <outlet property="window" destination="371" id="asi-6N-hle"/>
             </connections>
         </customObject>
     </objects>

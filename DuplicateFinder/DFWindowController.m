@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Orion Edwards. All rights reserved.
 //
 
-#import "DFTableViewController.h"
+#import "DFWindowController.h"
 #import "DFFile.h"
 #import "AppDelegate.h"
 
-@implementation DFTableViewController
+@implementation DFWindowController
 
 - (id)init {
     self = [super init];
@@ -22,7 +22,7 @@
 
 -(void)awakeFromNib {
     AppDelegate* appDelegate = [NSApplication sharedApplication].delegate;
-    appDelegate.tableViewController = self;
+    appDelegate.windowController = self; // TODO appdelegate may have multiple windows
 }
 
 -(void)addFile:(DFFile*)file {
@@ -69,6 +69,30 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
     
 }
+
+# pragma mark - Event Handlers
+
+
+- (IBAction)openDirectory:(id)sender {
+    
+    NSOpenPanel* openPanelDialog = [NSOpenPanel openPanel];
+    openPanelDialog.canChooseFiles = NO;
+    openPanelDialog.canChooseDirectories = YES;
+    openPanelDialog.prompt = @"Select...";
+    
+    if([openPanelDialog runModal] == NSOKButton) {
+        NSAlert* alert = [[NSAlert alloc] init];
+        alert.messageText = [NSString stringWithFormat:@"You selected %@", [openPanelDialog.URL absoluteString]];
+        [alert runModal];
+    }
+}
+
+- (IBAction)deleteLeft:(id)sender {
+}
+
+- (IBAction)deleteRight:(id)sender {
+}
+
 
 
 @end
