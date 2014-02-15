@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DFTableViewController: NSViewController<NSTableViewDelegate, NSTableViewDataSource>
-@property (nonatomic, strong) NSMutableArray* foundFiles;
+@class DFFile;
 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)rowIndex;
+@interface DFTableViewController : NSViewController<NSTableViewDelegate, NSTableViewDataSource>
+
+@property (weak) IBOutlet NSTableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray* files;
+
+-(void)addFile:(DFFile*)file;
+
 @end
