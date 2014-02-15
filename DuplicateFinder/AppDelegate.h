@@ -20,5 +20,6 @@
 @property (weak) IBOutlet NSToolbarItem *toolbarOpenDirectory;
 @property (weak) IBOutlet NSMenuItem *menuOpenDirectory;
 @property (weak) IBOutlet NSTableView *mainTableView;
+@property (weak) IBOutlet NSTextField *statusBarTextField;
 
 @end

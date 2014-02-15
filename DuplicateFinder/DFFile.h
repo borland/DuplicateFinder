@@ -10,6 +10,8 @@
 
 @interface DFFile : NSObject
 
++(DFFile*)fileWithLeft:(NSString*)left right:(NSString*)right size:(NSUInteger)size hash:(NSUInteger)hash;
+
 @property(nonatomic, copy) NSString* leftFilePath;
 @property(nonatomic, copy) NSString* rightFilePath;
 

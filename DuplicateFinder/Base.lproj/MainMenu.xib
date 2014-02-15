@@ -71,212 +71,12 @@
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Directory Pair..." keyEquivalent="O" id="Aw4-Xc-g9x"/>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem title="Edit" id="217">
-                    <menu key="submenu" title="Edit" id="205">
-                        <items>
-                            <menuItem title="Undo" keyEquivalent="z" id="207">
-                                <connections>
-                                    <action selector="undo:" target="-1" id="223"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Redo" keyEquivalent="Z" id="215">
-                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                <connections>
-                                    <action selector="redo:" target="-1" id="231"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="206">
-                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Cut" keyEquivalent="x" id="199">
-                                <connections>
-                                    <action selector="cut:" target="-1" id="228"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Copy" keyEquivalent="c" id="197">
-                                <connections>
-                                    <action selector="copy:" target="-1" id="224"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Paste" keyEquivalent="v" id="203">
-                                <connections>
-                                    <action selector="paste:" target="-1" id="226"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Paste and Match Style" keyEquivalent="V" id="485">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                <connections>
-                                    <action selector="pasteAsPlainText:" target="-1" id="486"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Delete" id="202">
-                                <connections>
-                                    <action selector="delete:" target="-1" id="235"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Select All" keyEquivalent="a" id="198">
-                                <connections>
-                                    <action selector="selectAll:" target="-1" id="232"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="214">
-                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Find" id="218">
-                                <menu key="submenu" title="Find" id="220">
-                                    <items>
-                                        <menuItem title="Find…" tag="1" keyEquivalent="f" id="209">
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="241"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Find and Replace…" tag="12" keyEquivalent="f" id="534">
-                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="535"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Find Next" tag="2" keyEquivalent="g" id="208">
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="487"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="213">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="488"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="221">
-                                            <connections>
-                                                <action selector="performFindPanelAction:" target="-1" id="489"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Jump to Selection" keyEquivalent="j" id="210">
-                                            <connections>
-                                                <action selector="centerSelectionInVisibleArea:" target="-1" id="245"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="Spelling and Grammar" id="216">
-                                <menu key="submenu" title="Spelling and Grammar" id="200">
-                                    <items>
-                                        <menuItem title="Show Spelling and Grammar" keyEquivalent=":" id="204">
-                                            <connections>
-                                                <action selector="showGuessPanel:" target="-1" id="230"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Check Document Now" keyEquivalent=";" id="201">
-                                            <connections>
-                                                <action selector="checkSpelling:" target="-1" id="225"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="453"/>
-                                        <menuItem title="Check Spelling While Typing" id="219">
-                                            <connections>
-                                                <action selector="toggleContinuousSpellChecking:" target="-1" id="222"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Check Grammar With Spelling" id="346">
-                                            <connections>
-                                                <action selector="toggleGrammarChecking:" target="-1" id="347"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Correct Spelling Automatically" id="454">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="toggleAutomaticSpellingCorrection:" target="-1" id="456"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="Substitutions" id="348">
-                                <menu key="submenu" title="Substitutions" id="349">
-                                    <items>
-                                        <menuItem title="Show Substitutions" id="457">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="orderFrontSubstitutionsPanel:" target="-1" id="458"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="459"/>
-                                        <menuItem title="Smart Copy/Paste" tag="1" keyEquivalent="f" id="350">
-                                            <connections>
-                                                <action selector="toggleSmartInsertDelete:" target="-1" id="355"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Smart Quotes" tag="2" keyEquivalent="g" id="351">
-                                            <connections>
-                                                <action selector="toggleAutomaticQuoteSubstitution:" target="-1" id="356"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Smart Dashes" id="460">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="toggleAutomaticDashSubstitution:" target="-1" id="461"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Smart Links" tag="3" keyEquivalent="G" id="354">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="toggleAutomaticLinkDetection:" target="-1" id="357"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Text Replacement" id="462">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="toggleAutomaticTextReplacement:" target="-1" id="463"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="Transformations" id="450">
+                            <menuItem isSeparatorItem="YES" id="Pwd-OF-NfK"/>
+                            <menuItem title="Delete Left File" keyEquivalent="l" id="XA9-kg-3qx">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Transformations" id="451">
-                                    <items>
-                                        <menuItem title="Make Upper Case" id="452">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="uppercaseWord:" target="-1" id="464"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Make Lower Case" id="465">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="lowercaseWord:" target="-1" id="468"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Capitalize" id="466">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="capitalizeWord:" target="-1" id="467"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
                             </menuItem>
-                            <menuItem title="Speech" id="211">
-                                <menu key="submenu" title="Speech" id="212">
-                                    <items>
-                                        <menuItem title="Start Speaking" id="196">
-                                            <connections>
-                                                <action selector="startSpeaking:" target="-1" id="233"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Stop Speaking" id="195">
-                                            <connections>
-                                                <action selector="stopSpeaking:" target="-1" id="227"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
+                            <menuItem title="Delete Right File" keyEquivalent="r" id="TKI-Fm-3VV">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                         </items>
                     </menu>
@@ -342,8 +142,8 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="FirstFilePath" editable="NO" width="116" minWidth="40" maxWidth="1000" id="bOS-8f-IvC">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="First">
+                                        <tableColumn identifier="leftFilePath" editable="NO" width="179.00390625" minWidth="40" maxWidth="1000" id="bOS-8f-IvC">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -355,8 +155,8 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
-                                        <tableColumn identifier="SecondFIlePath" editable="NO" width="100" minWidth="40" maxWidth="1000" id="CNk-CI-2KS">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Second">
+                                        <tableColumn identifier="rightFilePath" editable="NO" width="216.296875" minWidth="40" maxWidth="1000" id="CNk-CI-2KS">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Right">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -368,7 +168,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
-                                        <tableColumn identifier="FileSize" editable="NO" width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="j5c-KH-Pba">
+                                        <tableColumn identifier="fileSize" editable="NO" width="107.84375" minWidth="10" maxWidth="3.4028234663852886e+38" id="j5c-KH-Pba">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Size">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -399,12 +199,27 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ia9-a7-d5Z">
+                        <rect key="frame" x="6" y="5" width="525" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="jBl-7E-PEE"/>
+                        </constraints>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Status bar text" usesSingleLineMode="YES" id="di1-s2-NCn">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Ia9-a7-d5Z" secondAttribute="bottom" constant="5" id="FQv-p6-D27"/>
+                    <constraint firstItem="Ia9-a7-d5Z" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="8" id="Mnm-mh-XGg"/>
                     <constraint firstAttribute="bottom" secondItem="7h3-4r-vC7" secondAttribute="bottom" constant="25" id="dyR-Uz-r0t"/>
                     <constraint firstAttribute="trailing" secondItem="7h3-4r-vC7" secondAttribute="trailing" constant="-1" id="feK-vA-m14"/>
                     <constraint firstItem="7h3-4r-vC7" firstAttribute="top" secondItem="372" secondAttribute="top" constant="-1" id="nQE-fP-vFo"/>
                     <constraint firstItem="7h3-4r-vC7" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="-1" id="rw1-hZ-3AZ"/>
+                    <constraint firstAttribute="trailing" secondItem="Ia9-a7-d5Z" secondAttribute="trailing" constant="7" id="ybs-fr-vx9"/>
                 </constraints>
             </view>
             <toolbar key="toolbar" implicitIdentifier="2F950D47-A3A7-46FC-BBDB-BCF4C7378BB2" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="small" id="dQO-dT-2z2">
@@ -414,11 +229,15 @@
                             <action selector="openDirectory:" target="494" id="biM-Cg-1aZ"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="EE5C92B9-0AC8-4F71-91D6-44E5569A36A3" label="Delete Left" paletteLabel="Delete Left" tag="-1" image="NSGoLeftTemplate" id="Hip-F1-YEE"/>
+                    <toolbarItem implicitItemIdentifier="FB7F05F4-A907-4000-8FE8-47FEC7A8E537" label="Delete Right" paletteLabel="Delete Right" tag="-1" image="NSGoRightTemplate" id="MHk-BH-7Ue"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="C2P-vL-Z3X"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="RxL-tk-WfP"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="Qup-RH-Ki0"/>
+                    <toolbarItem reference="Hip-F1-YEE"/>
+                    <toolbarItem reference="MHk-BH-7Ue"/>
                     <toolbarItem reference="RxL-tk-WfP"/>
                 </defaultToolbarItems>
             </toolbar>
@@ -427,6 +246,7 @@
             <connections>
                 <outlet property="mainTableView" destination="PaC-uN-2Wg" id="jM7-cz-2zg"/>
                 <outlet property="menuOpenDirectory" destination="72" id="qzB-GN-dWc"/>
+                <outlet property="statusBarTextField" destination="Ia9-a7-d5Z" id="No9-c4-eb4"/>
                 <outlet property="toolbarOpenDirectory" destination="Qup-RH-Ki0" id="Euq-QS-mxu"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
@@ -435,5 +255,7 @@
     </objects>
     <resources>
         <image name="NSFolder" width="32" height="32"/>
+        <image name="NSGoLeftTemplate" width="9" height="9"/>
+        <image name="NSGoRightTemplate" width="9" height="9"/>
     </resources>
 </document>

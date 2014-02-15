@@ -17,13 +17,11 @@
     // Insert code here to initialize your application
     DFTableViewController* controller = [[DFTableViewController alloc] init];
 
-    DFFile* file = DFFile.new;
-    file.leftFilePath = @"/Users/Foo/Bar.jpg";
-    file.rightFilePath = @"/Users/Bar/Bar.jpg";
-    file.size = 1024;
-    file.hash = 300;
+    DFFile* f1 = [DFFile fileWithLeft:@"/Users/Foo/Bar.jpg" right:@"/Users/Bar/Bar.jpg" size:1024 hash:300];
+    DFFile* f2 = [DFFile fileWithLeft:@"/Users/Foo/X.jpg" right:@"/Users/Bar/X-2.jpg" size:2034951 hash:92];
     
-    [controller.foundFiles addObject:file];
+    [controller.foundFiles addObject:f1];
+    [controller.foundFiles addObject:f2];
     self.tableViewController = controller;
     
     self.mainTableView.delegate = controller;
@@ -43,4 +41,44 @@
         [alert runModal];
     }
 }
+
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    // This is a defensive move
+    // There are cases where the nib containing the NSTableView can be loaded before the data is populated
+    // by ensuring the count value is 0 and checking to see if the namesArray is not nil, the application
+    // is protecting itself agains that situation
+    NSInteger count=0;
+    if (self.foundFiles)
+        count=[self.foundFiles count];
+    return count;
+}
+
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)rowIndex
+{
+    // The column identifier string is the easiest way to identify a table column. Much easier
+    // than keeping a reference to the table column object.
+    NSString *columnIdentifer = [column identifier];
+    
+    // Get the name at the specified row in the namesArray
+    DFFile *theFile = [self.foundFiles objectAtIndex:rowIndex];
+    
+    // Compare each column identifier and set the return value to
+    // the Person field value appropriate for the column.
+    if ([columnIdentifer isEqualToString:@"leftFilePath"]) {
+        return theFile.leftFilePath;
+    } else if( [columnIdentifer isEqualToString:@"rightFilePath"]) {
+        return theFile.rightFilePath;
+    } else if( [columnIdentifer isEqualToString:@"fileSize"]) {
+        return @(theFile.size);
+    }
+    
+    return nil;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    
+}
+
 @end

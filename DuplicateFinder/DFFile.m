@@ -10,4 +10,13 @@
 
 @implementation DFFile
 
++(DFFile*)fileWithLeft:(NSString*)left right:(NSString*)right size:(NSUInteger)size hash:(NSUInteger)hash {
+    DFFile* f = DFFile.new;
+    f.leftFilePath = left;
+    f.rightFilePath = right;
+    f.size = size;
+    f.hash = hash;
+    return f;
+}
+
 @end
