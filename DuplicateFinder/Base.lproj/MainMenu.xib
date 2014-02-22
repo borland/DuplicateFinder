@@ -275,6 +275,7 @@
             <connections>
                 <outlet property="deleteLeftToolbarItem" destination="Hip-F1-YEE" id="j9S-FM-caF"/>
                 <outlet property="deleteRightToolbarItem" destination="MHk-BH-7Ue" id="KiM-mD-RY4"/>
+                <outlet property="openDirectoryToolbarItem" destination="Qup-RH-Ki0" id="yd1-VL-CXO"/>
                 <outlet property="tableView" destination="PaC-uN-2Wg" id="ywT-Rj-rky"/>
                 <outlet property="window" destination="371" id="asi-6N-hle"/>
             </connections>

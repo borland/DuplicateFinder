@@ -15,6 +15,7 @@
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSToolbarItem *deleteLeftToolbarItem;
 @property (weak) IBOutlet NSToolbarItem *deleteRightToolbarItem;
+@property (weak) IBOutlet NSToolbarItem *openDirectoryToolbarItem;
 
 - (IBAction)openDirectory:(id)sender;
 - (IBAction)deleteLeft:(id)sender;
