@@ -36,8 +36,8 @@
 #pragma mark - DFWindowController
 
 @implementation DFWindowController {
-    dispatch_queue_t _gatherer;
-    dispatch_queue_t _verifier;
+    dispatch_queue_t _gathererQueue;
+    dispatch_queue_t _verifierQueue;
     
     NSMutableDictionary*  _filesBySize; // only access via _gatherer. Keys are (NSNumber*)size and (FileWithHash*)file
 }
@@ -46,8 +46,8 @@
     self = [super init];
     if(self ) {
         self.files = [[NSMutableArray alloc] init];
-        _gatherer = dispatch_queue_create("file gatherer", DISPATCH_QUEUE_SERIAL);
-        _verifier = dispatch_queue_create("file verifier", DISPATCH_QUEUE_SERIAL);
+        _gathererQueue = dispatch_queue_create("file gatherer", DISPATCH_QUEUE_SERIAL);
+        _verifierQueue = dispatch_queue_create("file verifier", DISPATCH_QUEUE_SERIAL);
         _filesBySize = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -133,7 +133,7 @@
 }
 
 -(void)findDuplicatesInDirectory:(NSURL*)directoryURL {
-    dispatch_async(_gatherer, ^{
+    dispatch_async(_gathererQueue, ^{
         _filesBySize = [[NSMutableDictionary alloc] init];
         NSFileManager *fileManager = NSFileManager.new;
         
@@ -150,28 +150,28 @@
         for (NSURL *url in enumerator) { 
             NSError *error;
             NSNumber *isDirectory = nil;
-            if (! [url getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:&error]) {
-                // handle error
+            if (![url getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:&error]) {
+                // if we can't ask if something is a directory, something is wrong, just ignore it
             }
             else if (! [isDirectory boolValue]) {
-                [self processFile:url];
+                [self processFile:url]; // processFile will add a bunch of stuff to _verifierQueue
             }
         }
         
-        dispatch_async(_verifier, ^{
+        dispatch_async(_verifierQueue, ^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSAlert *alert = [[NSAlert alloc] init];
-                [alert setMessageText:@"Done."];
+                alert.messageText = @"Done";
                 [alert runModal];
             });
         });
     });
 }
 
--(void)verifyFiles:(NSArray*) array {
+-(void)verifyFiles:(NSArray*) files {
     NSMutableSet* hashes = NSMutableSet.new;
     
-    for(FileWithHash* f in array) {
+    for(FileWithHash* f in files) {
         if(!f.hash) {
             // read the first 1k and hash it
             NSError* error;
@@ -191,23 +191,22 @@
         }
         
         if([hashes containsObject:f.hash]) { // duplicate!
-            NSIndexSet* duplicateOfIndexes = [array indexesOfObjectsPassingTest:^BOOL(FileWithHash* obj, NSUInteger idx, BOOL *stop) {
+            NSIndexSet* duplicateOfIndexes = [files indexesOfObjectsPassingTest:^BOOL(FileWithHash* obj, NSUInteger idx, BOOL *stop) {
                 return obj != f && [obj.hash isEqualToData:f.hash];
             }];
             
-            NSArray* duplicateOf = [array objectsAtIndexes:duplicateOfIndexes];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                for(FileWithHash* dupe in duplicateOf) {
-//                    f.file 
-                    
-                    DFFile* dff = [DFFile fileWithLeft:f.file.absoluteString
-                                                 right:dupe.file.absoluteString
-                                                  size:f.size.unsignedIntegerValue
-                                                  hash:0];
-                    [self addFile:dff];
-                }
+            NSArray* duplicateOf = [files objectsAtIndexes:duplicateOfIndexes];
+
+            for(FileWithHash* dupe in duplicateOf) {
+                DFFile* dff = [DFFile fileWithLeft:f.file.absoluteString
+                                             right:dupe.file.absoluteString
+                                              size:f.size.unsignedIntegerValue
+                                              hash:0];
                 
-            });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self addFile:dff];
+                });
+            }
         } else {
             [hashes addObject:f.hash];
         }
@@ -228,7 +227,7 @@
             
             NSArray* xcopy = x.copy;
 //            NSLog(@"multiple files with same size: %@", xcopy);
-            dispatch_async(_verifier, ^{
+            dispatch_async(_verifierQueue, ^{
                 [self verifyFiles:xcopy];
             });
         } else {
